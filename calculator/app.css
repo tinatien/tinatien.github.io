@@ -1,0 +1,14 @@
+.green{
+	background: green;
+}
+
+button{
+	/*width: 100px;*/
+	font-size: 24px;
+	margin: 5px;
+	width: 100px;
+	height: 100px;
+}
+#message{
+	font-size: 24px;
+}
