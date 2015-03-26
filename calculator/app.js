@@ -2,7 +2,7 @@ $(function() {
     var currrentText = '';
     var firstvalue=0;
     var situation;
-    var result;
+    
 
 
 
@@ -85,7 +85,6 @@ $(function() {
 
         if (situation == '+') {
             currrentText = parseFloat(firstvalue) + parseFloat(currrentText);
-
             render(); 
         }
         if (situation == '-') {
