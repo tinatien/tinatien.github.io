@@ -1,7 +1,8 @@
 $(function() {
     var currrentText = '';
-    var temp1=0;
+    var firstvalue=0;
     var situation;
+    var result;
 
 
 
@@ -57,58 +58,50 @@ $(function() {
     });
 
     $('#btnAdd').on('click', function() {
-
-        temp1 = currrentText;
         situation = '+';
-        currrentText = '';
-        // render();
+        operate();
+    
     });
 
     $('#btnMinus').on('click', function() {
-
-        temp1 = currrentText;
         situation = '-';
-        currrentText = '';
-        // render();
+        operate();
+       
     });
 
     $('#btnMultiple').on('click', function() {
-        temp1 = currrentText;
         situation = '*';
-        currrentText = '';
-        // render();
+        operate();
+        
     });
 
     $('#btnDivide').on('click', function() {
-        temp1 = currrentText;
         situation = '/';
-        currrentText = '';
-        // render();
+        operate();
     });
 
 
     $('#btnEqual').on('click', function() {
-        var result;
+
         if (situation == '+') {
-            result = parseFloat(temp1) + parseFloat(currrentText);
-            $('#message').text(result);
+            currrentText = parseFloat(firstvalue) + parseFloat(currrentText);
+
+            render(); 
         }
         if (situation == '-') {
-            result = parseFloat(temp1) - parseFloat(currrentText);
-            $('#message').text(result);
+            currrentText = parseFloat(firstvalue) - parseFloat(currrentText);
+            render();
         }
         if (situation == '*') {
-            result = parseFloat(temp1) * parseFloat(currrentText);
-            $('#message').text(result);
+            currrentText = parseFloat(firstvalue) * parseFloat(currrentText);
+            render();
         }
         if (situation == '/') {
-            result = parseFloat(temp1) / parseFloat(currrentText);
-            $('#message').text(result);
-        }
-        // else{
-        //     result=currrentText;
-        // }
+            currrentText = parseFloat(firstvalue) / parseFloat(currrentText);
+            render();
 
+        }
+       
 
     });
 
@@ -119,6 +112,10 @@ $(function() {
 
     function render() {
         $('#message').text(currrentText);
+    }
+    function operate(){
+        firstvalue = currrentText;
+        currrentText = '';
     }
 
 });
